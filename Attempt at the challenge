@@ -7,7 +7,7 @@ def find_free_tables(restaurant_tables, timeslot):
     
     # Only include the tables that are free and match our custom criteria
     free_tables = [table_labels[i] for i in range(len(timeslot_status)) 
-                   if timeslot_status[i] == 'o' and table_labels[i] in ['T1(2)', 'T3(2)', 'T5(6)']]  # Mistake here: 'T5(6)' should be 'T4(6)'
+                   if timeslot_status[i] == 'o' and table_labels[i] in ['T1(2)', 'T3(2)', 'T5(6)']] 
     
     return free_tables
 
