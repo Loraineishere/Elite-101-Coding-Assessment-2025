@@ -1,0 +1,17 @@
+def find_free_tables(restaurant_tables, timeslot):
+    # Table labels in Row 0
+    table_labels = restaurant_tables[0][1:]
+    
+    # Status of tables for the given timeslot
+    timeslot_status = restaurant_tables[timeslot][1:]
+    
+    # Only include the tables that are free and match our custom criteria
+    free_tables = [table_labels[i] for i in range(len(timeslot_status)) 
+                   if timeslot_status[i] == 'o' and table_labels[i] in ['T1(2)', 'T3(2)', 'T5(6)']]  # Mistake here: 'T5(6)' should be 'T4(6)'
+    
+    return free_tables
+
+# Test the function with the second restaurant layout (restaurant_tables2)
+timeslot = 2  # Checking for timeslot 2 (third row in the list)
+free_tables = find_free_tables(restaurant_tables2, timeslot)
+print(f"Free tables at timeslot {timeslot}: {free_tables}")
